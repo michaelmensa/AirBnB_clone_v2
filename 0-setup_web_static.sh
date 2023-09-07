@@ -3,8 +3,15 @@
 
 #install Nginx if not exist
 sudo apt-get update
-sudo apt-get -y install nginx
-sudo ufw allow 'Nginx HTTP'
+if ! command -v nginx &> /dev/null; then
+    echo "Nginx is not installed, installing now..."
+    sudo apt-get -y install nginx
+    echo "Nginx successfully installed"
+else
+    echo "Nginx is already installed"
+fi
+
+sudo service nginx start
 
 # create directories
 sudo mkdir -p /data/
