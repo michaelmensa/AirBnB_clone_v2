@@ -10,6 +10,7 @@ from fabric.api import local
 from datetime import datetime
 import os
 
+
 def do_pack():
     '''
     Compresses the web_static folder into a .tgz archive.
@@ -21,7 +22,6 @@ def do_pack():
         timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
         archive_name = f'web_static_{timestamp}.tgz'
         archive_path = local(f'tar -czvf versions/{archive_name} web_static/')
-        
         return archive_path
     except Exception as e:
         print("An exception occurred: {}".format(e))
