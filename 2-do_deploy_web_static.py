@@ -53,6 +53,10 @@ def do_deploy(archive_path):
         run(f'sudo tar -xzf /tmp/{tgz_file} -C {releases_path}')
         run(f'sudo rm /tmp/{tgz_file}')
 
+        '''move contents into host web_static'''
+        run(f"mv {releases_path}/web_static/* {releases_path}")
+        run(f"rm -rf {releases_path}/web_static")
+
         '''delete symbolic link /data/web_static/current if exists'''
         run('sudo rm -rf /data/web_static/current')
 
