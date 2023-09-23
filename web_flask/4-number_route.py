@@ -44,7 +44,7 @@ def python_route(text='is cool'):
 def is_int(n):
     ''' functions that handles variable '''
     if isinstance(n, int):
-        return f'{n} is an integer'
+        return f'{n} is a number'
 
 
 if __name__ == '__main__':
