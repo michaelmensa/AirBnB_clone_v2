@@ -12,6 +12,7 @@ def Hello_HBNB():
     ''' function that returns "Hello HBNB" '''
     return "Hello HBNB!"
 
+
 @app.route('/hbnb', strict_slashes=False)
 def HBNB():
     ''' function that returns "HBNB" '''
