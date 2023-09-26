@@ -10,7 +10,7 @@ from models.city import City
 #from models.place import Place
 from models.state import State
 #from models.review import Review
-#from models.user import User
+from models.user import User
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 name2class = {
@@ -19,7 +19,7 @@ name2class = {
     #'Place': Place,
     'State': State,
     #'Review': Review,
-    #'User': User
+    'User': User
 }
 
 
