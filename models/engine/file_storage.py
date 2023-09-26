@@ -71,3 +71,7 @@ class FileStorage:
         ''' Deletes obj from __objects if it is inside '''
         if obj is not None:
             del self.__objects[f'{type(obj).__name__}.{obj.id}']
+
+    def close(self):
+        ''' Deserializes JSON file to objects '''
+        self.reload()
