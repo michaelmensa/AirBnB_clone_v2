@@ -66,7 +66,8 @@ class BaseModel:
     def to_dict(self, save_to_disk=False):
         """Convert instance into dict format"""
         new_dict = self.__dict__.copy()
-        new_dict.pop('_sa_instance_state', None)
+        if '_sa_instance_state' in new_dict:
+            new_dict.pop('_sa_instance_state', None)
         if "created_at" in new_dict:
             new_dict["created_at"] = new_dict["created_at"].isoformat()
         if "updated_at" in new_dict:
